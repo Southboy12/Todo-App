@@ -1,0 +1,224 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: #e1e1e1;
+  overflow-x: hidden;
+  font-size: medium;
+}
+
+header {
+  background-color: #1a1a1a;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 30px;
+  padding: 30px 0;
+}
+
+.header h1 {
+  font-family: "indie flower", cursive;
+  font-size: 8rem;
+  color: #fff;
+  width: 8rem;
+  line-height: 0.8;
+  margin: 0;
+}
+
+.underline--task {
+  text-decoration: underline;
+}
+
+.header--content {
+  display: flex;
+  flex-direction: column;
+  width: 13rem;
+  color: #fff;
+}
+
+.header-content--text {
+  display: flex;
+  flex-direction: column;
+  width: 9em;
+  font-size: 1.5em;
+}
+
+.second {
+  align-self: flex-end;
+}
+
+.header-add--task {
+  background-color: #42fdaf;
+  color: #181717;
+  font-family: "Roboto", "Lato", sans-serif;
+  font-size: 0.8rem;
+  font-weight: bold;
+  align-self: flex-end;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.board {
+  position: relative;
+  margin-top: 5rem;
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.tab {
+  border: 1px solid #42fdaf;
+  border-radius: 5px;
+  display: flex;
+  background-color: #1b1b1b;
+  padding: 0;
+  }
+
+.tab--button {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  
+}
+
+.tab--button button {
+  background-color: #1b1b1b;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: .9rem;
+  cursor: pointer;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tab--button button:hover {
+  background-color: #1b1b1b;
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 0px 8px 4px rgba(255, 255, 255, 1);
+}
+
+.tab--filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 50%;
+}
+
+.tab--filter select {
+  background-color: #1b1b1b;
+  color: #fff;
+  border: none;
+  padding: 0.4rem 1rem;
+  font-size: 0.6rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 1px solid #42fdaf;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tab--filter select:hover {
+  background-color: #1b1b1b;
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 0px 8px 4px rgba(255, 255, 255, 1);
+}
+
+.tab--filter i {
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.task--container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.task--header {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  width: 32%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+}
+
+.task--status {
+  text-align: center;
+  padding: 15px 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, .7);
+}
+
+.task--color {
+  padding: 5px 0;
+}
+
+#color--pending {
+  background-color: #2196f3;
+}
+
+#color--progress {
+  background-color: #ffeb3b;
+}
+
+#color--complete{
+  background-color: #42fdaf;
+}
+
+.dashboard--text {
+  text-align: center;
+  padding: 10rem 0;
+  font-family: "indie flower", cursive;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card--container {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem;
+}
+
+.card--pending, .card--progress, .card--complete {
+  /* border: 1px solid green; */
+  width: 32%;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, .7);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+}
+
+.card:hover {
+  background-color: #fff;
+}
+
+.card h3 {
+  background-color: rgb(255, 174, 25);
+  border-radius: 5px 5px 0 0;
+}
+
+.padding {
+  padding: 5px 10px;
+}
