@@ -2,24 +2,111 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Karla:ital,wght@0,200..800;1,200..800&family=Smythe&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo App</title>
   </head>
   <body>
+    <!-- <div id="app"></div> -->
     <header>
       <div class="header">
-        <h1>While Task</h1>
-        <div>
-          <div>
-            <p>Your task manager</p>
-            <p>Create and manage</p>
-            <p>Achieve your goals</p>
+          <h1>While <br> <span class="underline--task">Task</span> <br></h1>
+          <div class="header--content">
+          <div class="header-content--text">
+              <p>Your task manager</p>
+              <p class="second">Create and manage</p>
+              <p>Achieve your goals</p>
           </div>
-          <button>ADD TASK</button>
-        </div>
+          <button class="header-add--task">ADD TASK</button>
+          </div>
       </div>
-    </header>
+  </header>
+  <main class="board">
+      <section class="tab container">
+        <div class="tab--button">
+          <button>add task</button>
+          <button>go top</button>
+          <button>clear board</button>
+          <button>reset filter</button>
+        </div>
+        <div class="tab--filter">
+          <select id="filter--status">
+            <option disabled selected>--Status--</option>
+            <option value="pending">Pending</option>
+            <option value="progress">In Progress</option>
+            <option value="completed">Completed</option>
+          </select>
+          <select id="filter--status">
+            <option disabled selected>--Priority--</option>
+            <option value="pending">High</option>
+            <option value="progress">Medium</option>
+            <option value="completed">Low</option>
+          </select>
+          <select id="filter--status">
+            <option disabled selected>--Date--</option>
+            <option value="pending">Today</option>
+            <option value="progress">Last 7 days</option>
+            <option value="completed">Last 30 days</option>
+            <option value="completed">Before 30 days</option>
+          </select>
+          <i class="fas fa-search"></i>
+        </div>
+      </section>
+
+      <section class="task--container container">
+        <div class="task--header">
+          <div class="task--status">Pending</div>
+          <div id="color--pending" class="task--color"></div>
+        </div>
+        <div class="task--header">
+          <div class="task--status">In Progress</div>
+          <div id="color--progress" class="task--color"></div>
+        </div>
+        <div class="task--header">
+          <div class="task--status">Completed</div>
+          <div id="color--complete" class="task--color"></div>
+        </div>
+      </section>
+
+      <!-- <section class="dashboard--text container">
+        <p class="card--text">Dashboard is empty, start by adding your first task!</p>
+      </section> -->
+
+      <section class="card--container container">
+        <div class="card--pending">
+          <div class="card">
+            <h3 class="padding">Medium</h3><br>
+            <div class="padding task--date">
+              <h4>Date Added</h4>
+              <p>Thursday, 02/27/2025 - 10:40:03</p>
+            </div><br>
+            <div class="padding task--title">
+              <h4>Title</h4>
+              <p>Playing mortal combat</p>
+            </div><br>
+            <div class="padding task--description">
+              <h4>Description</h4>
+              <p>I have done the description</p>
+            </div><br>
+            <div class="padding task--note">
+              <h4>Notes</h4>
+              <div class="task--note-number">1</div>
+              <div class="task--note-delete"></div>
+            </div>
+          </div>
+          
+        </div>
+        <div class="card--progress">
+          
+        </div>
+        <div class="card--complete">
+      
+        </div>
+      </section>
+  </main>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
