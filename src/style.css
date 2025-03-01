@@ -216,7 +216,7 @@ header {
 }
 
 .card h3 {
-  background-color: rgb(255, 174, 25);
+  /* background-color: rgb(255, 174, 25); */
   border-radius: 5px 5px 0 0;
 }
 
@@ -227,6 +227,18 @@ header {
 .dashboard--text {
   display: flex;
   justify-content: center;
+}
+
+.priority--high {
+  background-color: red;
+}
+
+.priority--medium {
+  background-color: orange;
+}
+
+.priority--low {
+  background-color: green;
 }
 
 
