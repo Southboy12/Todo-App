@@ -1,33 +1,111 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Karla:ital,wght@0,200..800;1,200..800&family=Smythe&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Karla:ital,wght@0,200..800;1,200..800&family=Smythe&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Todo App</title>
   </head>
   <body>
     <!-- <div id="app"></div> -->
     <header>
       <div class="header">
-          <h1>While <br> <span class="underline--task">Task</span> <br></h1>
-          <div class="header--content">
+        <h1>
+          While <br />
+          <span class="underline--task">Task</span> <br />
+        </h1>
+        <div class="header--content">
           <div class="header-content--text">
-              <p>Your task manager</p>
-              <p class="second">Create and manage</p>
-              <p>Achieve your goals</p>
+            <p>Your task manager</p>
+            <p class="second">Create and manage</p>
+            <p>Achieve your goals</p>
           </div>
-          <button class="header-add--task">ADD TASK</button>
+
+          <!-- Button to Open Modal -->
+          <button class="openModal header-add--task">add task</button>
+
+          <!-- Modal -->
+          <div id="modal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2>Add your task</h2>
+              
+              <form>
+                <!-- Title Input -->
+                <label for="textInput">Title:</label>
+                <input
+                  type="text"
+                  id="title"
+                  placeholder="Enter task title"
+                  required
+                />
+
+                <!-- Description Text Areas -->
+                <label for="textarea1">Description:</label>
+                <textarea
+                  id="description"
+                  rows="3"
+                  placeholder="Enter details"
+                  required
+                ></textarea>
+
+                <!-- Date & Time Row -->
+                <div class="row">
+                  <div>
+                    <label for="dateInput">Date:</label>
+                    <input type="date" id="dateInput" />
+                  </div>
+                  <div>
+                    <label for="timeInput">Time:</label>
+                    <input type="time" id="timeInput" />
+                  </div>
+                </div>
+
+                <label for="select2">Priority:</label>
+                <select id="priority">
+                  <option selected disabled>--Choose priority--</option>
+                  <option>High</option>
+                  <option>Medium</option>
+                  <option>Low</option>
+                </select>
+
+                <!-- Select Dropdowns -->
+                <label for="select1">Status</label>
+                <select id="status">
+                  <option selected disabled>--Select status--</option>
+                  <option>Pending</option>
+                  <option>In Progress</option>
+                </select>
+
+                <label for="textarea2">Do you want to add a note?</label>
+                <textarea
+                  id="note"
+                  rows="3"
+                  placeholder="Enter notes"
+                ></textarea>
+
+                <!-- Submit Button -->
+                <button type="submit" id="submit--btn" class="submit-btn">add task</button>
+              </form>
+            </div>
           </div>
+        </div>
       </div>
-  </header>
-  <main class="board">
+    </header>
+    <main class="board">
       <section class="tab container">
         <div class="tab--button">
-          <button>add task</button>
+          <button class="openModal">add task</button>
           <button>go top</button>
           <button>clear board</button>
           <button>reset filter</button>
@@ -47,10 +125,10 @@
           </select>
           <select id="filter--status">
             <option disabled selected>--Date--</option>
-            <option value="pending">Today</option>
-            <option value="progress">Last 7 days</option>
-            <option value="completed">Last 30 days</option>
-            <option value="completed">Before 30 days</option>
+            <option value="today">Today</option>
+            <option value="last-7-days">Last 7 days</option>
+            <option value="last-30-days">Last 30 days</option>
+            <option value="before-30-days">Before 30 days</option>
           </select>
           <i class="fas fa-search"></i>
         </div>
@@ -71,42 +149,18 @@
         </div>
       </section>
 
-      <!-- <section class="dashboard--text container">
+      <section class="dashboard--text container">
         <p class="card--text">Dashboard is empty, start by adding your first task!</p>
-      </section> -->
+      </section>
 
       <section class="card--container container">
-        <div class="card--pending">
-          <div class="card">
-            <h3 class="padding">Medium</h3><br>
-            <div class="padding task--date">
-              <h4>Date Added</h4>
-              <p>Thursday, 02/27/2025 - 10:40:03</p>
-            </div><br>
-            <div class="padding task--title">
-              <h4>Title</h4>
-              <p>Playing mortal combat</p>
-            </div><br>
-            <div class="padding task--description">
-              <h4>Description</h4>
-              <p>I have done the description</p>
-            </div><br>
-            <div class="padding task--note">
-              <h4>Notes</h4>
-              <div class="task--note-number">1</div>
-              <div class="task--note-delete"></div>
-            </div>
-          </div>
+        <div id="card--pending" class="card--pending">
           
         </div>
-        <div class="card--progress">
-          
-        </div>
-        <div class="card--complete">
-      
-        </div>
+        <div id="card--progress" class="card--progress"></div>
+        <div id="card--complete" class="card--complete"></div>
       </section>
-  </main>
+    </main>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
